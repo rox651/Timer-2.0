@@ -25,7 +25,7 @@ const Timer = () => {
 
    return (
       <section>
-         <Title className="text-center mb-8">Cronometro</Title>
+         <Title className="text-center mb-8">Timer</Title>
          <TimerClock />
          <TimerButtons isActive={isActive} setIsActive={setIsActive} />
          <TimeLaps />
