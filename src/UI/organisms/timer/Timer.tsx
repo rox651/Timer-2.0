@@ -6,27 +6,12 @@ import TimerButtons from "./TimerButtons";
 import TimeLaps from "./TimeLaps";
 
 const Timer = () => {
-   const { incrementTime } = useAppStore();
    const [isActive, setIsActive] = useState(false);
-
-   useEffect(() => {
-      let interval: any = null;
-
-      if (isActive) {
-         interval = setInterval(() => {
-            incrementTime(1);
-         }, 1000);
-      } else {
-         clearInterval(interval);
-      }
-
-      return () => clearInterval(interval);
-   }, [isActive, incrementTime]);
 
    return (
       <section>
          <Title className="text-center mb-8">Timer</Title>
-         <TimerClock />
+         <TimerClock isActive={isActive} />
          <TimerButtons isActive={isActive} setIsActive={setIsActive} />
          <TimeLaps />
       </section>
